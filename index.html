@@ -63,19 +63,6 @@
 	<![endif]-->
 
 	</head>
-	<script type="text/javascript">
-		(function(d, t) {
-			var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-			v.onload = function() {
-			  window.voiceflow.chat.load({
-				verify: { projectID: '671e2c2b23e443163e2610cf' },
-				url: 'https://general-runtime.voiceflow.com',
-				versionID: 'production'
-			  });
-			}
-			v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-		})(document, 'script');
-	  </script>
 	<body>
 	<header role="banner" id="fh5co-header">
 		<div class="fluid-container">
@@ -293,6 +280,19 @@
 	</script>
 	
 
+	<script type="text/javascript">
+		(function(d, t) {
+			var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+			v.onload = function() {
+			  window.voiceflow.chat.load({
+				verify: { projectID: '671e2c2b23e443163e2610cf' },
+				url: 'https://general-runtime.voiceflow.com',
+				versionID: 'production'
+			  });
+			}
+			v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+		})(document, 'script');
+	  </script>
 	</body>
 </html>
 
