@@ -269,6 +269,7 @@
 				console.log('Blah:', response);
 	
 				if (response.ok) {
+					const jsonResponse = await response.json();
 					alert("Thank you! Your email has been submitted.");
 				} else {
 					alert("Oops! There was a problem with your submission.");
