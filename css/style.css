@@ -314,6 +314,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #fh5co-services,
 #fh5co-explore,
+#fh5co-email,
 #fh5co-team,
 #fh5co-footer,
 #fh5co-work,
@@ -324,6 +325,7 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (max-width: 768px) {
   #fh5co-services,
   #fh5co-explore,
+  #fh5co-email,
   #fh5co-team,
   #fh5co-footer,
   #fh5co-work,
@@ -367,6 +369,53 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   color: #a4b7c9;
   margin: 0 0 0 0;
+}
+
+.fh5co-email {
+  padding-bottom: 40px;
+}
+
+#fh5co-email .text-center h2 {
+  font-size: 40px;
+  font-weight: 400;
+  color: #8EA5BC;
+  margin: 0 0 0 0;
+}
+
+#fh5co-email .text-center h3 {
+  font-size: 20px;
+  font-weight: 300;
+  color: #a4b7c9;
+  margin: 0 0 0 0;
+}
+
+#email-form {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#email-form input[type="email"] {
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  max-width: 300px;
+}
+
+#email-form button {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  background-color: #8EA5BC;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#email-form button:hover {
+  background-color: #718496;
 }
 
 .fh5co-project .project-grid {

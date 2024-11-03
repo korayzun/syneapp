@@ -85,6 +85,7 @@
 						<li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
 						<li><a href="#" data-nav-section="services"><span>Services</span></a></li>
 						<li><a href="#" data-nav-section="explore"><span>Project</span></a></li>
+						<li><a href="#" data-nav-section="email"><span>Email</span></a></li>
 					</ul>
 				</div>
 			</nav>
@@ -201,6 +202,27 @@
 				</div>
 			</div>
 	</section>
+
+	<section id="fh5co-email" data-section="email" style="background-image: url(images/full_image_1.png);">
+		<div class="fh5co-email">
+			<div class="gradient"></div>
+			<div class="container">
+				<div class="text-wrap">
+					<div class="text-inner">
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 text-center">
+								<h2 class="to-animate">Enter email </h2>
+								<form id="email-form" class="to-animate" action="#" method="post">
+									<input type="email" id="email" name="email" placeholder="Enter your email" required>
+									<button type="submit">Submit</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	
 	<div id="fh5co-footer" role="contentinfo" style="background-image: url(images/full_image_1.png);">
 		<div class="container">
@@ -242,6 +264,34 @@
 	<script src="js/jquery.countTo.js"></script>
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
+
+	<script>
+		document.getElementById("email-form").addEventListener("submit", async function(event) {
+			event.preventDefault(); // Prevents form from redirecting
+	
+			const email = document.getElementById("email").value;
+			const scriptURL = 'AKfycbxhwVLWyzJBYDLSs63wFEVkFWskD8sYEjGSNqNFLcRD'; // Replace with your Google Apps Script URL
+	
+			try {
+				let response = await fetch(scriptURL, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+					body: new URLSearchParams({ 'email': email })
+				});
+	
+				if (response.ok) {
+					alert("Thank you! Your email has been submitted.");
+				} else {
+					alert("Oops! There was a problem with your submission.");
+				}
+			} catch (error) {
+				alert("Network error! Please try again later.");
+			}
+	
+			document.getElementById("email").value = ""; // Clear the input field
+		});
+	</script>
+	
 
 	</body>
 </html>
