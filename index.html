@@ -254,10 +254,10 @@
 
 	<script>
 		document.getElementById("email-form").addEventListener("submit", async function(event) {
-			event.preventDefault(); // Prevents form from redirecting
-	
+			event.preventDefault();
+
 			const email = document.getElementById("email").value;
-			const scriptURL = 'AKfycbxhwVLWyzJBYDLSs63wFEVkFWskD8sYEjGSNqNFLcRD'; // Replace with your Google Apps Script URL
+			const scriptURL = 'https://script.google.com/macros/s/AKfycbxhwVLWyzJBYDLSs63wFEVkFWskD8sYEjGSNqNFLcRD/exec';
 	
 			try {
 				let response = await fetch(scriptURL, {
@@ -275,7 +275,7 @@
 				alert("Network error! Please try again later.");
 			}
 	
-			document.getElementById("email").value = ""; // Clear the input field
+			document.getElementById("email").value = "";
 		});
 	</script>
 	
