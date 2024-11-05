@@ -317,6 +317,58 @@
 	<script>
 		document.getElementById("email-form").addEventListener("submit", async function(event) {
 			event.preventDefault();
+	
+			const email = document.getElementById("email").value;
+			const scriptURL = 'https://script.google.com/macros/s/AKfycbzDjnOdBdJDXVQm9Tc15qJE_QjgoGqboS9i0VRUbnMJoqwgF8FZchgumzC-ylZQShCW2w/exec';
+	
+			console.log("Email:", email);
+			console.log("Script URL:", scriptURL);
+	
+			try {
+				let response = await fetch(scriptURL, {
+					method: 'POST',
+					mode: 'cors',
+					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+					body: new URLSearchParams({ 'email': email })
+				});
+	
+				if (!response.ok) {
+					throw new Error(`HTTP error! Status: ${response.status}`);
+				}
+	
+				// Fetch the raw text response and log it
+				const rawText = await response.text();
+				console.log("Raw Response:", rawText);
+	
+				// Try parsing the raw text as JSON
+				try {
+					const result = JSON.parse(rawText);
+					if (result.success) {
+						alert("Thank you! Your email has been submitted.");
+					} else {
+						alert("Error: " + result.message);
+					}
+				} catch (parseError) {
+					// Handle JSON parsing errors
+					console.error("JSON Parse Error:", parseError);
+					alert("Unexpected response format. Please try again later.");
+				}
+	
+			} catch (error) {
+				// Network or fetch errors
+				alert("Network error! Please try again later.");
+				console.log("Error: ", error);
+			}
+	
+			// Clear the email field after submission
+			document.getElementById("email").value = "";
+		});
+	</script>
+	
+
+	<!-- <script>
+		document.getElementById("email-form").addEventListener("submit", async function(event) {
+			event.preventDefault();
 
 			const email = document.getElementById("email").value;
 			const scriptURL = 'https://script.google.com/macros/s/AKfycbzDjnOdBdJDXVQm9Tc15qJE_QjgoGqboS9i0VRUbnMJoqwgF8FZchgumzC-ylZQShCW2w/exec';
@@ -354,7 +406,7 @@
 	
 			document.getElementById("email").value = "";
 		});
-	</script>
+	</script> -->
 	
 
 	<script type="text/javascript">
