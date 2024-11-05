@@ -333,10 +333,11 @@
 
 				// alert("Thank you! Your email has been submitted.");
 
-				if (response.ok) {
+				const result = await response.json();
+				if (result.success) {
 					alert("Thank you! Your email has been submitted.");
 				} else {
-					alert("There was an error submitting your email. Please try again later.");
+					alert("Error: " + result.message);
 				}
 
 			} catch (error) {
