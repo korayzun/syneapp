@@ -266,9 +266,10 @@
 					body: JSON.stringify({ email: email })
 				});
 
+				console.log('Email: ', email);
 				console.log('Response Status:', response.status);
-            const responseBody = await response.text();
-            console.log('Response Body:', responseBody);
+            	const responseBody = await response.text();
+            	console.log('Response Body:', responseBody);
 	
 				if (response.ok) {
 					alert("Thank you! Your email has been submitted.");
