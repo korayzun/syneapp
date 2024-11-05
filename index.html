@@ -324,14 +324,20 @@
 			try {
 				let response = await fetch(scriptURL, {
 					method: 'POST',
-					mode: 'no-cors',
+					mode: 'cors',
 					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 					body: new URLSearchParams({ 'email': email })
 				});
 
-				console.log('Blah:', response);
+				// console.log('Blah:', response);
 
-				alert("Thank you! Your email has been submitted.");
+				// alert("Thank you! Your email has been submitted.");
+
+				if (response.ok) {
+					alert("Thank you! Your email has been submitted.");
+				} else {
+					alert("There was an error submitting your email. Please try again later.");
+				}
 
 			} catch (error) {
 				alert("Network error! Please try again later.");
