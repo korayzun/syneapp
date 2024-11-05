@@ -258,6 +258,35 @@
 	
 			const email = document.getElementById("email").value;
 			const scriptURL = 'https://us-east1-landing-page-leads-440713.cloudfunctions.net/landingPageEmails';
+		
+			try {
+				let response = await fetch(scriptURL, {
+					method: 'POST',
+					mode: 'no-cors', // This will prevent CORS checks
+					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+					body: new URLSearchParams({ 'email': email }) // Format the body accordingly
+				});
+	
+				console.log('Response:', response);
+	
+				// In no-cors mode, you won't be able to check response.ok or response.status
+				alert("Thank you! Your email has been submitted.");
+	
+			} catch (error) {
+				alert("Network error! Please try again later.");
+			}
+		
+			document.getElementById("email").value = "";
+		});
+	</script>
+	
+
+	<!-- <script>
+		document.getElementById("email-form").addEventListener("submit", async function(event) {
+			event.preventDefault();
+	
+			const email = document.getElementById("email").value;
+			const scriptURL = 'https://us-east1-landing-page-leads-440713.cloudfunctions.net/landingPageEmails';
 	
 			try {
 				let response = await fetch(scriptURL, {
@@ -283,7 +312,7 @@
 	
 			document.getElementById("email").value = "";
 		});
-	</script>
+	</script> -->
 
 	<!-- <script>
 		document.getElementById("email-form").addEventListener("submit", async function(event) {
