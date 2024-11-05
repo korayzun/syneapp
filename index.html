@@ -320,6 +320,9 @@
 
 			const email = document.getElementById("email").value;
 			const scriptURL = 'https://script.google.com/macros/s/AKfycbzDjnOdBdJDXVQm9Tc15qJE_QjgoGqboS9i0VRUbnMJoqwgF8FZchgumzC-ylZQShCW2w/exec';
+
+			console.log("Email:", email);
+    console.log("Script URL:", scriptURL);
 	
 			try {
 				let response = await fetch(scriptURL, {
@@ -332,6 +335,10 @@
 				// console.log('Blah:', response);
 
 				// alert("Thank you! Your email has been submitted.");
+
+				if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
 
 				const result = await response.json();
 				if (result.success) {
