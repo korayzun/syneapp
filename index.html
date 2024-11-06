@@ -273,7 +273,7 @@
 	  
 			let emailResponse = await fetch(scriptURL, {
 			  method: 'POST',
-			  mode: 'cors',
+			  mode: 'no-cors',
 			  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 			  body: new URLSearchParams({ 'email': email })
 			});
