@@ -2,7 +2,7 @@ const functions = require("firebase-functions");
 const cors = require("cors");
 
 const corsOptions = {
-  origin: "https://korayzun.github.io",
+  origin: "https://www.syneeapp.com",
   methods: ["GET"],
   allowedHeaders: ["Content-Type"],
 };
