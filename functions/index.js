@@ -117,13 +117,18 @@ const fetch = require("node-fetch");
 exports.getAppScriptUrl = functions.https.onRequest((req, res) => {
   cors(req, res, async () => {
     try {
-      const appScriptUrl = functions.config().appscript.url;
+      // Use the environment variable APPSCRIPT_URL directly
+      const appScriptUrl = process.env.APPSCRIPT_URL;
+
       if (!appScriptUrl) {
+        console.error("App Script URL is not set in environment variables.");
         return res.status(500).send("App Script URL not set.");
       }
 
-      // Fetch request to Google Apps Script URL
+      // Retrieve email from query parameters
       const email = req.query.email;
+
+      // Post request to the Apps Script URL
       const response = await fetch(appScriptUrl, {
         method: "POST",
         headers: {"Content-Type": "application/x-www-form-urlencoded"},
@@ -133,10 +138,9 @@ exports.getAppScriptUrl = functions.https.onRequest((req, res) => {
       const result = await response.json();
       res.status(response.status).json(result);
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error submitting email:", error);
       res.status(500).send("Error submitting email.");
     }
   });
 });
-
 
