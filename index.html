@@ -260,9 +260,12 @@
 	  
 		  // Fetch the Google Apps Script URL from Firebase Function
 		  try {
-			const response = await fetch('https://us-central1-landing-page-leads-440713.cloudfunctions.net/getAppScriptUrl', {
-				method: 'GET',
-				});
+			// const response = await fetch('https://us-central1-landing-page-leads-440713.cloudfunctions.net/getAppScriptUrl', {
+			// 	method: 'GET',
+			// 	});
+			const response = await fetch('https://us-central1-landing-page-leads-440713.cloudfunctions.net/getAppScriptUrl?email=' + encodeURIComponent(email), {
+			method: 'GET'
+			});
 
 			const data = await response.json();
 			
