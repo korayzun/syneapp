@@ -281,13 +281,13 @@
 			  body: new URLSearchParams({ 'email': email })
 			});
 
-			console.log("EmailRes: ", emailResponse);
+			alert("Thank you! Your email has been submitted.");
 
-			if (emailResponse.ok) {
-				alert("Thank you! Your email has been submitted.");
-			} else {
-				alert("There was an issue submitting your email.");
-			}
+			// if (emailResponse.ok) {
+			// 	alert("Thank you! Your email has been submitted.");
+			// } else {
+			// 	alert("There was an issue submitting your email.");
+			// }
 	  
 			// const result = await emailResponse.json();
 			// if (result.success) {
