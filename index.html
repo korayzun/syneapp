@@ -260,12 +260,9 @@
 	  
 		  // Fetch the Google Apps Script URL from Firebase Function
 		  try {
-			// const response = await fetch('https://us-central1-landing-page-leads-440713.cloudfunctions.net/getAppScriptUrl', {
-			// 	method: 'GET',
-			// 	});
-			const response = await fetch('https://us-central1-landing-page-leads-440713.cloudfunctions.net/getAppScriptUrl?email=' + encodeURIComponent(email), {
-			method: 'GET'
-			});
+			const response = await fetch('https://us-central1-landing-page-leads-440713.cloudfunctions.net/getAppScriptUrl', {
+				method: 'GET',
+				});
 
 			const data = await response.json();
 			
@@ -279,21 +276,23 @@
 	  
 			let emailResponse = await fetch(scriptURL, {
 			  method: 'POST',
-			  mode: 'cors',
+			  mode: 'no-cors',
 			  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 			  body: new URLSearchParams({ 'email': email })
 			});
-	  
-			if (!emailResponse.ok) {
-			  throw new Error(`HTTP error! Status: ${emailResponse.status}`);
-			}
-	  
-			const result = await emailResponse.json();
-			if (result.success) {
-			  alert("Thank you! Your email has been submitted.");
+
+			if (emailResponse.ok) {
+				alert("Thank you! Your email has been submitted.");
 			} else {
-			  alert("Error: " + result.message);
+				alert("There was an issue submitting your email.");
 			}
+	  
+			// const result = await emailResponse.json();
+			// if (result.success) {
+			//   alert("Thank you! Your email has been submitted.");
+			// } else {
+			//   alert("Error: " + result.message);
+			// }
 	  
 		  } catch (error) {
 			alert("Network error! Please try again later.");
