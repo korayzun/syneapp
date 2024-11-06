@@ -281,6 +281,8 @@
 			  body: new URLSearchParams({ 'email': email })
 			});
 
+			console.log("EmailRes: ", emailResponse);
+
 			if (emailResponse.ok) {
 				alert("Thank you! Your email has been submitted.");
 			} else {
