@@ -375,18 +375,25 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 40px;
 }
 
-#fh5co-email .text-center h2 {
+#fh5co-email .text-inner h2 {
   font-size: 40px;
   font-weight: 400;
   color: #8EA5BC;
   margin: 0 0 0 0;
 }
 
-#fh5co-email .text-center h3 {
-  font-size: 20px;
-  font-weight: 300;
+#fh5co-email .text-inner h3 {
+  font-size: 30px;
+  font-weight: 400;
   color: #a4b7c9;
   margin: 0 0 0 0;
+}
+
+#fh5co-email .text-inner p {
+  font-size: 20px;
+  font-weight: 200;
+  color: #a4b7c9;
+  margin-top: 40px;
 }
 
 #email-form {

@@ -198,7 +198,9 @@
 					<div class="text-inner">
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2 text-center">
-								<h2 class="to-animate">Enter email </h2>
+								<h2 class="to-animate">Stay Ahead. Get Exclusive Updates!</h2>
+                            	<p class="to-animate">Be the first to know about new features, updates, and exciting news. <br> Enter your email below and stay in the loop!<br>
+								</p>
 								<form id="email-form" class="to-animate" action="#" method="post">
 									<input type="email" id="email" name="email" placeholder="Enter your email" required>
 									<button type="submit">Submit</button>
@@ -258,7 +260,6 @@
 	  
 		  const email = document.getElementById("email").value;
 	  
-		  // Fetch the Google Apps Script URL from Firebase Function
 		  try {
 			const response = await fetch('https://us-central1-landing-page-leads-440713.cloudfunctions.net/getAppScriptUrl', {
 				method: 'GET',
@@ -271,7 +272,6 @@
 			  return;
 			}
 	  
-			// Send the email to the Google Apps Script URL
 			const scriptURL = data.url;
 	  
 			let emailResponse = await fetch(scriptURL, {
@@ -282,19 +282,6 @@
 			});
 
 			alert("Thank you! Your email has been submitted.");
-
-			// if (emailResponse.ok) {
-			// 	alert("Thank you! Your email has been submitted.");
-			// } else {
-			// 	alert("There was an issue submitting your email.");
-			// }
-	  
-			// const result = await emailResponse.json();
-			// if (result.success) {
-			//   alert("Thank you! Your email has been submitted.");
-			// } else {
-			//   alert("Error: " + result.message);
-			// }
 	  
 		  } catch (error) {
 			alert("Network error! Please try again later.");
@@ -304,164 +291,6 @@
 		  document.getElementById("email").value = "";
 		});
 	  </script>
-	  
-
-	<!-- <script>
-		document.getElementById("email-form").addEventListener("submit", async function(event) {
-			event.preventDefault();
-	
-			const email = document.getElementById("email").value;
-			const scriptURL = 'https://us-east1-landing-page-leads-440713.cloudfunctions.net/landingPageEmails';
-		
-			try {
-				let response = await fetch(scriptURL, {
-					method: 'POST',
-					mode: 'no-cors', // This will prevent CORS checks
-					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-					body: new URLSearchParams({ 'email': email }) // Format the body accordingly
-				});
-	
-				console.log('Response:', response);
-	
-				// In no-cors mode, you won't be able to check response.ok or response.status
-				alert("Thank you! Your email has been submitted.");
-	
-			} catch (error) {
-				alert("Network error! Please try again later.");
-			}
-		
-			document.getElementById("email").value = "";
-		});
-	</script> -->
-	
-
-	<!-- <script>
-		document.getElementById("email-form").addEventListener("submit", async function(event) {
-			event.preventDefault();
-	
-			const email = document.getElementById("email").value;
-			const scriptURL = 'https://us-east1-landing-page-leads-440713.cloudfunctions.net/landingPageEmails';
-	
-			try {
-				let response = await fetch(scriptURL, {
-					method: 'POST',
-					headers: { 'Content-Type': 'application/json' },
-					body: JSON.stringify({ email: email })
-				});
-
-				console.log('Email: ', email);
-				console.log('Response Status:', response.status);
-            	const responseBody = await response.text();
-            	console.log('Response Body:', responseBody);
-	
-				if (response.ok) {
-					alert("Thank you! Your email has been submitted.");
-				} else {
-					alert("There was an error submitting your email.");
-				}
-	
-			} catch (error) {
-				alert("Network error! Please try again later.");
-			}
-	
-			document.getElementById("email").value = "";
-		});
-	</script> -->
-
-	<!-- <script>
-		document.getElementById("email-form").addEventListener("submit", async function(event) {
-			event.preventDefault();
-	
-			const email = document.getElementById("email").value;
-			const scriptURL = 'https://script.google.com/macros/s/AKfycbzDjnOdBdJDXVQm9Tc15qJE_QjgoGqboS9i0VRUbnMJoqwgF8FZchgumzC-ylZQShCW2w/exec';
-	
-			console.log("Email:", email);
-			console.log("Script URL:", scriptURL);
-	
-			try {
-				let response = await fetch(scriptURL, {
-					method: 'POST',
-					mode: 'cors',
-					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-					body: new URLSearchParams({ 'email': email })
-				});
-	
-				if (!response.ok) {
-					throw new Error(`HTTP error! Status: ${response.status}`);
-				}
-	
-				// Fetch the raw text response and log it
-				const rawText = await response.text();
-				console.log("Raw Response:", rawText);
-	
-				// Try parsing the raw text as JSON
-				try {
-					const result = JSON.parse(rawText);
-					if (result.success) {
-						alert("Thank you! Your email has been submitted.");
-					} else {
-						alert("Error: " + result.message);
-					}
-				} catch (parseError) {
-					// Handle JSON parsing errors
-					console.error("JSON Parse Error:", parseError);
-					alert("Unexpected response format. Please try again later.");
-				}
-	
-			} catch (error) {
-				// Network or fetch errors
-				alert("Network error! Please try again later.");
-				console.log("Error: ", error);
-			}
-	
-			// Clear the email field after submission
-			document.getElementById("email").value = "";
-		});
-	</script> -->
-	
-
-	<!-- <script>
-		document.getElementById("email-form").addEventListener("submit", async function(event) {
-			event.preventDefault();
-
-			const email = document.getElementById("email").value;
-			const scriptURL = 'https://script.google.com/macros/s/AKfycbzDjnOdBdJDXVQm9Tc15qJE_QjgoGqboS9i0VRUbnMJoqwgF8FZchgumzC-ylZQShCW2w/exec';
-
-			console.log("Email:", email);
-    console.log("Script URL:", scriptURL);
-	
-			try {
-				let response = await fetch(scriptURL, {
-					method: 'POST',
-					mode: 'cors',
-					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-					body: new URLSearchParams({ 'email': email })
-				});
-
-				// console.log('Blah:', response);
-
-				// alert("Thank you! Your email has been submitted.");
-
-				if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-				const result = await response.json();
-				if (result.success) {
-					alert("Thank you! Your email has been submitted.");
-				} else {
-					alert("Error: " + result.message);
-				}
-
-			} catch (error) {
-				alert("Network error! Please try again later.");
-				console.log("Error: ", error);
-			}
-	
-			document.getElementById("email").value = "";
-		});
-	</script> -->
-	
 
 	<script type="text/javascript">
 		(function(d, t) {
