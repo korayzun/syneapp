@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (max-width: 768px) {
   #fh5co-header #navbar li {
-    margin-left: 10px !important;
+    display: none !important;
   }
 }
 #fh5co-header #navbar li a {
@@ -247,6 +247,26 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media screen and (max-width: 768px) {
+  /* Adjust the chatbot container for tablet and small desktop screens */
+  .vfrc-widget--chat {
+      width: 80vw !important;  /* 80% of the viewport width */
+      height: 60vh !important; /* 60% of the viewport height */
+      bottom: 10px !important; /* Move it closer to the bottom */
+      right: 10px !important;  /* Move it closer to the right */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Further adjustments for smartphones */
+  .vfrc-widget--chat {
+      width: 90vw !important;  /* 90% of the viewport width */
+      height: 50vh !important; /* 50% of the viewport height */
+      bottom: 5px !important;  /* Even closer to the bottom */
+      right: 5px !important;   /* Even closer to the right */
+  }
+}
+
 #fh5co-home {
   background-color: transparent;
   background-size: cover;
@@ -259,14 +279,6 @@ h1, h2, h3, h4, h5, h6 {
     background-position: center center;
     background-attachment: initial;
   }
-}
-#fh5co-home a {
-  color: rgba(255, 255, 255, 0.8) !important;
-  text-decoration: underline;
-}
-#fh5co-home a:hover {
-  color: #fff;
-  text-decoration: none;
 }
 #fh5co-home .gradient {
   position: absolute;
@@ -347,6 +359,12 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0 0;
 }
 
+@media screen and (max-width: 768px) {
+  #fh5co-services .text-center h2 {
+    font-size: 30px;
+  }
+}
+
 #fh5co-services .text-center h3 {
   font-size: 20px;
   font-weight: 300;
@@ -383,11 +401,25 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
 }
 
+@media screen and (max-width: 768px) {
+  .fh5co-email {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+  }
+}
+
 #fh5co-email .text-inner h2 {
   font-size: 40px;
   font-weight: 400;
   color: #8EA5BC;
   margin: 0 0 0 0;
+}
+
+@media screen and (max-width: 768px) {
+  #fh5co-email .text-inner h2 {
+    font-size: 30px;
+  }
 }
 
 #fh5co-email .text-inner h3 {
