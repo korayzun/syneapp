@@ -425,9 +425,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #718496;
 }
 
-.sender-form-field {
-  max-width: 600px;
-  margin: 0 auto;
+#fh5co-email .sender-form-field {
   display: flex;
   justify-content: center;
   align-items: center;
