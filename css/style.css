@@ -425,6 +425,14 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #718496;
 }
 
+.sender-form-field {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .fh5co-project .project-grid {
   width: 100%;
   height: 800px;

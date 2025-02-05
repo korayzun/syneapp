@@ -62,6 +62,21 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+		<script>
+			(function (s, e, n, d, er) {
+			s['Sender'] = er;
+			s[er] = s[er] || function () {
+				(s[er].q = s[er].q || []).push(arguments)
+			}, s[er].l = 1 * new Date();
+			var a = e.createElement(n),
+				m = e.getElementsByTagName(n)[0];
+			a.async = 1;
+			a.src = d;
+			m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+			sender('2608d05aab4198')
+		</script>
+
 	</head>
 	<body>
 	<header role="banner" id="fh5co-header">
@@ -201,10 +216,11 @@
 								<h2 class="to-animate">Stay Updated</h2>
                             	<p class="to-animate">Be the first to know about new features, updates, and exciting news. <br> Enter your email below and stay in the loop!<br>
 								</p>
-								<form id="email-form" class="to-animate" action="#" method="post">
+								<div style="text-align: left" class="sender-form-field" data-sender-form-id="m6ro04slam89zg9du9k"></div>
+								<!-- <form id="email-form" class="to-animate" action="#" method="post">
 									<input type="email" id="email" name="email" placeholder="Enter your email" required>
 									<button type="submit">Submit</button>
-								</form>
+								</form> -->
 							</div>
 						</div>
 					</div>
@@ -222,7 +238,7 @@
 						<li><a href="agreements/TermsofService.pdf" target="_blank">Terms of Service</a></li>
 						<li><a href="agreements/PrivacyPolicy.pdf" target="_blank">Privacy Policy</a></li>
 					</ul>
-					<p class="copy-right">&copy; 2024 Syne Holding LLC <br>All Rights Reserved. <br>
+					<p class="copy-right">&copy; 2025 Syne Holding LLC <br>All Rights Reserved. <br>
 					</p>
 				</div>
 
@@ -254,7 +270,8 @@
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
 
-	<script>
+	<!-- This script is for the commented out email field which leads to the Google Sheet Document inside the Drive, replaced by sender.net implementation-->
+	<!-- <script>
 		document.getElementById("email-form").addEventListener("submit", async function(event) {
 		  event.preventDefault();
 	  
@@ -290,7 +307,7 @@
 	  
 		  document.getElementById("email").value = "";
 		});
-	  </script>
+	  </script> -->
 
 	<script type="text/javascript">
 		(function(d, t) {
