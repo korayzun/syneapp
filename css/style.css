@@ -277,11 +277,11 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
 }
 #fh5co-home, #fh5co-home .text-wrap {
-  height: 900px;
+  height: 600px;
 }
 @media screen and (max-width: 768px) {
   #fh5co-home, #fh5co-home .text-wrap {
-    height: 500px;
+    height: 600px;
   }
 }
 #fh5co-home .text-wrap {
@@ -292,7 +292,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #fh5co-home .text-inner {
   display: table-cell;
-  vertical-align: middle;
+  vertical-align: bottom;
 }
 #fh5co-home .text-inner img {
   margin: 0 0 100px 0;
@@ -336,6 +336,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #fh5co-services {
+  padding-top: 0;
   padding-bottom: 0;
 }
 
@@ -372,7 +373,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .fh5co-email {
-  padding-bottom: 40px;
+  padding-top: 40px;
+  margin-left: 200px;
+  margin-right: 200px;
+  height: 450px;
+  border-radius: 25px;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
 }
 
 #fh5co-email .text-inner h2 {
